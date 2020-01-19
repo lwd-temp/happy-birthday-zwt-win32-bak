@@ -13,16 +13,22 @@ import win32api,win32con,win32gui
 import random
 
 # 版本号发布之前改掉
-version="beta"
+version="alpha"
 stcuti=datetime.datetime.now()
 strstcuti=str(stcuti.year)+"-"+str(stcuti.month)+"-"+str(stcuti.day)+"-"+str(stcuti.hour)+"-"+str(stcuti.minute)+"-"+str(stcuti.second)
 logname="hbzwin32log-"+strstcuti
 actstat=0 # 布尔 是否激活操作
 
+def get_desktop():
+    # 获取桌面路径
+    key =win32api.RegOpenKey(win32con.HKEY_CURRENT_USER,r'Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders',0,win32con.KEY_READ)
+    return win32api.RegQueryValueEx(key,'Desktop')[0]
+desktop=get_desktop()
+
 def logit(msg):
     # 日志函数
     if info.log==1:
-        with open(os.path.join(desktop,"logname"),"a") as logfile:
+        with open(os.path.join(desktop,logname),"a") as logfile:
             content="["str(datetime.datetime.now())+"]"+str(msg)+"\n"
             logfile.write(content)
 
@@ -30,11 +36,6 @@ logit("日志开始")
 logit("hbzwin32"+"版本"+version)
 logit("日志文件"+logname)
 
-def get_desktop():
-    # 获取桌面路径
-    key =win32api.RegOpenKey(win32con.HKEY_CURRENT_USER,r'Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders',0,win32con.KEY_READ)
-    return win32api.RegQueryValueEx(key,'Desktop')[0]
-desktop=get_desktop()
 logit("桌面路径"+desktop)
 
 def msgbox(title,content):
@@ -65,7 +66,7 @@ if nowmon==info.month:
 if nowmon==info.dism:
     if nowday<=info.disd:
         actstat=1
-if actstat=1:
+if actstat==1:
     logit("行动开始")
 else:
     logit("时辰未到，程序退出")
