@@ -1,8 +1,9 @@
 #coding:utf-8
 # info.py
-# happy-birthday-zwt-win32 的配置文件
+# happy-birthday-zwt-win32 的配置文件和字符串常量
 # Copyright © 2020 lwd-temp@Github.com. All rights reserved.
 log=1
+debug=0
 name="ZWT"
 msg="Happy Birthday "+name+"!"
 month=5
@@ -24,3 +25,4 @@ dism=disactmonth
 disd=disactday
 ah=acthour
 am=actmin
+copyright='''Copyright © 2020 lwd-temp@Github.com. All rights reserved.'''
