@@ -1,6 +1,7 @@
 #coding:utf-8
 # main.py
 # happy-birthday-zwt-win32 项目的主程序代码
+# https://github.com/lwd-temp/happy-birthday-zwt-win32
 # Copyright © 2020 lwd-temp@Github.com. All rights reserved.
 import time
 import datetime
@@ -16,7 +17,7 @@ import random
 version="alpha"
 stcuti=datetime.datetime.now()
 strstcuti=str(stcuti.year)+"-"+str(stcuti.month)+"-"+str(stcuti.day)+"-"+str(stcuti.hour)+"-"+str(stcuti.minute)+"-"+str(stcuti.second)
-logname="hbzwin32log-"+strstcuti
+logname="hbzwin32log-"+strstcuti+".txt"
 actstat=0 # 布尔 是否激活操作
 
 def get_desktop():
@@ -40,7 +41,7 @@ logit("桌面路径"+desktop)
 
 def msgbox(title,content):
     # win32api弹窗
-    win32api.MessageBox(0,str(content),str(title),win32con.MB_OK | win32con.MB_ICONWARNING)
+    win32api.MessageBox(0,str(content),str(title),win32con.MB_OK)
 logit("弹窗函数定义完成")
 
 #生成资源文件目录访问路径
@@ -50,13 +51,35 @@ def resource_path(relative_path):
     else:
         base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
-logit("资源文件路径处理完成")
+
+def donothing():
+    # 什么都不做
+    pass
+
+def actmsg():
+    # 行动 弹窗
+    logit("弹窗5次")
+    for i in range(1,6):
+        msgbox(info.title,info.msg)
+
+def actpop():
+    # 行动 气泡
+    logit("持续60s气泡")
+    for i in range(1,21):
+        bubble=popup.MainWindow()
+        bubble.startBubble(info.title,info.msg)
+
+def actwp():
+    # 行动 壁纸
+    logit("更改壁纸")
+    chwp(resource_path(os.path.join("res","wp.jpg")))
 
 # 确定日期时间是否符合info
 nowtime=datetime.datetime.now()
 nowmon=nowtime.month
 nowday=nowtime.day
 nowye=nowtime.year
+# 逻辑不严密 需要重写 暂时符合需求
 if nowmon==info.actm:
     if nowday>=info.actd:
         actstat=1
@@ -69,7 +92,7 @@ if nowmon==info.dism:
 if actstat==1:
     logit("行动开始")
 else:
-    logit("时辰未到，程序退出")
+    logit("日期未到，程序退出")
     exit()
 
 # 计算剩余秒
@@ -77,11 +100,15 @@ strthe=str(nowye)+"-"+str(nowmon)+"-"+str(nowday)+" "+str(info.ah)+":"+str(info.
 thetime=datetime.datetime.strptime(strthe,"%Y-%m-%d %H:%M:%S.%f")
 logit("行动时间"+str(thetime))
 delta=(thetime-nowtime).seconds
-logit("倒计时秒"+str(delta))
+logit("倒计时"+str(delta)+"秒")
 if delta<0:
-    logit("负秒 重试 推迟24h")
-    delta=delta+86400
-    logit(str(delta))
+        if delta>=-600:
+            delta=10
+            logit("超时小于10min 倒计时10s")
+        else:
+            logit("负秒 重试 推迟24h")
+            delta=delta+86400
+            logit("倒计时"+str(delta)+"秒")
 logit("开始等待"+str(delta)+"秒")
 time.sleep(delta)
 logit("开始行动")
