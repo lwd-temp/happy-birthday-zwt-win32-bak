@@ -28,11 +28,11 @@ desktop=get_desktop()
 
 def logit(msg):
     # 日志函数
-    if info.debug==1
+    if info.debug==1:
         print(str(msg))
     if info.log==1:
         with open(os.path.join(desktop,logname),"a") as logfile:
-            content="["str(datetime.datetime.now())+"]"+str(msg)+"\n"
+            content="["+str(datetime.datetime.now())+"]"+str(msg)+"\n"
             logfile.write(content)
 
 logit("日志开始")
@@ -120,7 +120,7 @@ logit("开始行动")
 
 num=random.randint(0,100)
 # 随机方案
-if num=0:
+if num==0:
     donothing()
 if num>=1:
     if num<=20:
