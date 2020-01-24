@@ -115,15 +115,15 @@ if num==0:
 if num>=1:
     if num<=20:
         actmsg()
-        msgboxact=1
+        statmsgboxact=1
 if num>=21:
     if num<=70:
         actpop()
-        popact=1
+        statpopact=1
 if num>=71:
     if num<=100:
         actwp()
-        wpact=1
+        statwpact=1
 
 #写说明
 if info.readme==1:
@@ -135,6 +135,6 @@ if info.readme==1:
         fileobj.write(info.usercontent+"\n")
         fileobj.write(info.copyright+"\n")
         fileobj.write(info.aboutpy+"\n")
-        if wpact==1:
+        if statwpact==1:
             fileobj.write(info.aboutwp+"\n")
         fileobj.write(license+"\n")

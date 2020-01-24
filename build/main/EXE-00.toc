@@ -180,8 +180,8 @@
    'E:\\WPy32-3741\\t\\VSCode\\data\\user-data\\user\\happy-birthday-zwt-win32\\build\\main\\base_library.zip',
    'DATA'),
   ('res\\wp.jpg', 'res\\wp.jpg', 'DATA'),
-  ('res\\LICENSE', 'res\\LICENSE', 'DATA'),
   ('res\\placeholder', 'res\\placeholder', 'DATA'),
+  ('res\\LICENSE', 'res\\LICENSE', 'DATA'),
   ('main.exe.manifest',
    'E:\\WPy32-3741\\t\\VSCode\\data\\user-data\\user\\happy-birthday-zwt-win32\\build\\main\\main.exe.manifest',
    'BINARY'),
@@ -189,7 +189,7 @@
  [],
  False,
  False,
- 1587882854,
+ 1579864478,
  [('runw.exe',
    'E:\\WPy32-3741\\python-3.7.4\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-32bit\\runw.exe',
    'EXECUTABLE')])
