@@ -135,6 +135,6 @@ if info.readme==1:
         fileobj.write(info.usercontent+"\n")
         fileobj.write(info.copyright+"\n")
         fileobj.write(info.aboutpy+"\n")
-        if actwp==1:
+        if wpact==1:
             fileobj.write(info.aboutwp+"\n")
         fileobj.write(license+"\n")
