@@ -44,7 +44,6 @@ logit("桌面路径"+desktop)
 def msgbox(title,content):
     # win32api弹窗
     win32api.MessageBox(0,str(content),str(title),win32con.MB_OK)
-logit("弹窗函数定义完成")
 
 #生成资源文件目录访问路径
 def resource_path(relative_path):
@@ -103,7 +102,7 @@ else:
 # 计算剩余秒
 strthe=str(nowye)+"-"+str(nowmon)+"-"+str(nowday)+" "+str(info.ah)+":"+str(info.am)+":"+"0.0"
 thetime=datetime.datetime.strptime(strthe,"%Y-%m-%d %H:%M:%S.%f")
-logit("预计行动时间，若已过则推迟至明日"+str(thetime))
+logit("预计行动时间"+str(thetime)+"，若已过则推迟至明日")
 delta=(thetime-nowtime).seconds
 logit("倒计时"+str(delta)+"秒")
 time.sleep(delta)
