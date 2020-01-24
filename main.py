@@ -28,6 +28,8 @@ desktop=get_desktop()
 
 def logit(msg):
     # 日志函数
+    if info.debug==1
+        print(str(msg))
     if info.log==1:
         with open(os.path.join(desktop,logname),"a") as logfile:
             content="["str(datetime.datetime.now())+"]"+str(msg)+"\n"
@@ -54,7 +56,7 @@ def resource_path(relative_path):
 
 def donothing():
     # 什么都不做
-    pass
+    logit("什么都不做")
 
 def actmsg():
     # 行动 弹窗
@@ -89,6 +91,9 @@ if nowmon==info.month:
 if nowmon==info.dism:
     if nowday<=info.disd:
         actstat=1
+if nowmon>info.actm:
+    if nowmon<info.dism:
+        actstat=1
 if actstat==1:
     logit("行动开始")
 else:
@@ -113,8 +118,28 @@ logit("开始等待"+str(delta)+"秒")
 time.sleep(delta)
 logit("开始行动")
 
+num=random.randint(0,100)
+# 随机方案
+if num=0:
+    donothing()
+if num>=1:
+    if num<=20:
+        actmsg()
+        msgboxact=1
+if num>=21:
+    if num<=70:
+        actpop()
+        popact=1
+if num>=71:
+    if num<=100:
+        actwp()
+        wpact=1
 
-
+#写说明
+if info.readme==1:
+    readmepath=os.path.join(desktop,"HBZWin32说明文件.txt")
+    with open(readmepath,"a") as fileobj:
+        
 
 
 

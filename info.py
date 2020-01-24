@@ -6,8 +6,8 @@
 # 注意 所有变量修改后保持原变量类型
 # 日志
 log=1
-# 调试选项 用于pyinstaller测试
-debug=0
+# 调试选项 用于pyinstaller测试和控制台输出
+debug=1
 # 字符串常量 见下文
 name="ZWT"
 # 信息内容
@@ -51,5 +51,8 @@ dism=disactmonth
 disd=disactday
 ah=acthour
 am=actmin
+readme=createreadme
 # 字符串常量和其他说明文本 无需改动
 copyright='''Copyright © 2020 lwd-temp@Github.com. All rights reserved.'''
+aboutwp='''桌面壁纸已经由注册表修改，如需更换请手动修改，壁纸似乎会在重新启动后恢复。'''
+aboutpy='''此应用程序使用Python及pywin32库编写，即使代码风格简单、属于解释型语言运行效率低、学习门槛低，Python仍然在许多领域焕发生机。'''
