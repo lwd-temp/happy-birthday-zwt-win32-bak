@@ -25,7 +25,7 @@ activeday=20
 # 结束月
 disactmonth=5
 # 结束日
-disactday=10
+disactday=15
 # 行动时 每日
 acthour=14
 # 行动分 每日
@@ -55,4 +55,4 @@ readme=createreadme
 # 字符串常量和其他说明文本 无需改动
 copyright='''Copyright © 2020 lwd-temp@Github.com. All rights reserved.'''
 aboutwp='''桌面壁纸已经由注册表修改，如需更换请手动修改，壁纸似乎会在重新启动后恢复。'''
-aboutpy='''此应用程序使用Python及pywin32库编写，即使代码风格简单、属于解释型语言运行效率低、学习门槛低，Python仍然在许多领域焕发生机。'''
+aboutpy='''此应用程序使用Python及pywin32库编写，即使代码风格简单、属于解释型语言运行效率低、学习门槛低，但无论是在大数据、人工智能领域还是用于如此无聊的用途，Python仍然在焕发生机。'''

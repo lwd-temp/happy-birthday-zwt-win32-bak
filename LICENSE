@@ -1,4 +1,4 @@
-main.py及info.py的alpha版本以ZWT 开源许可证版本0.1发布
+main.py及info.py的beta版本以ZWT 开源许可证版本0.1发布
 # lwd-temp@Github.com 2019 版权所有 © 保留所有权利。
 # ZWT 开源许可证版本0.1
 # 在符合下列条件的情况下，
@@ -17,3 +17,6 @@ main.py及info.py的alpha版本以ZWT 开源许可证版本0.1发布
 chwp.py 多个作者发表，原作者不可考证
 popup.py 作者adengou于2016.1.4
 resource_path() 出自多个参考文档
+
+以下版权资源文件可能在最终发布版本中使用：
+defwp.jpg Chuck Anderson & Erik Attkisson of NoPattern.com; © 2009 Microsoft Corporation.  All rights reserved

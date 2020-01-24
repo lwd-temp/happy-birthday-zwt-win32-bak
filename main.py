@@ -14,7 +14,7 @@ import win32api,win32con,win32gui
 import random
 
 # 版本号发布之前改掉
-version="alpha"
+version="beta"
 stcuti=datetime.datetime.now()
 strstcuti=str(stcuti.year)+"-"+str(stcuti.month)+"-"+str(stcuti.day)+"-"+str(stcuti.hour)+"-"+str(stcuti.minute)+"-"+str(stcuti.second)
 logname="hbzwin32log-"+strstcuti+".txt"
@@ -137,15 +137,14 @@ if num>=71:
 
 #写说明
 if info.readme==1:
+    logit("写入说明文件")
+    with open(resource_path(os.path.join("res","LICENSE")),"r") as licensefile:
+        license=licensefile.read()
     readmepath=os.path.join(desktop,"HBZWin32说明文件.txt")
     with open(readmepath,"a") as fileobj:
-        
-
-
-
-
-
-
-#访问res文件夹下defwp.jpg的内容
-filename = resource_path(os.path.join("res","defwp.jpg"))
-# https://www.cnblogs.com/darcymei/p/9397173.html
+        fileobj.write(info.usercontent+"\n")
+        fileobj.write(info.copyright+"\n")
+        fileobj.write(info.aboutpy+"\n")
+        if actwp==1:
+            fileobj.write(info.aboutwp+"\n")
+        fileobj.write(license+"\n")
