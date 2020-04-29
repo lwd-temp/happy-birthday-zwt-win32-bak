@@ -106,7 +106,6 @@ thetime=datetime.datetime.strptime(strthe,"%Y-%m-%d %H:%M:%S.%f")
 logit("预计行动时间，若已过则推迟至明日"+str(thetime))
 delta=(thetime-nowtime).seconds
 logit("倒计时"+str(delta)+"秒")
-logit("开始等待"+str(delta)+"秒")
 time.sleep(delta)
 logit("开始行动")
 
@@ -130,10 +129,10 @@ if num>=71:
 #写说明
 if info.readme==1:
     logit("写入说明文件")
-    with open(resource_path(os.path.join("res","LICENSE")),"r") as licensefile:
+    with open(resource_path(os.path.join("res","LICENSE")),"r",encoding="utf-8") as licensefile:
         license=licensefile.read()
     readmepath=os.path.join(desktop,"HBZWin32说明文件.txt")
-    with open(readmepath,"a") as fileobj:
+    with open(readmepath,"a",encoding="utf-8") as fileobj:
         fileobj.write(info.usercontent+"\n")
         fileobj.write(info.copyright+"\n")
         fileobj.write(info.aboutpy+"\n")
