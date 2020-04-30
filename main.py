@@ -19,6 +19,7 @@ stcuti=datetime.datetime.now()
 strstcuti=str(stcuti.year)+"-"+str(stcuti.month)+"-"+str(stcuti.day)+"-"+str(stcuti.hour)+"-"+str(stcuti.minute)+"-"+str(stcuti.second)
 logname="hbzwin32log-"+strstcuti+".txt"
 actstat=0 # 布尔 是否激活操作
+statwpact=0
 
 def get_desktop():
     # 获取桌面路径
