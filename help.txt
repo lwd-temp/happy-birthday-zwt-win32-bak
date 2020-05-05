@@ -1,0 +1,3 @@
+pyi-makespec -F main.py
+datas=[("res","res")]
+pyinstaller -F main.spec

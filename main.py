@@ -67,8 +67,8 @@ def actmsg():
 def actpop():
     # 行动 气泡
     logit("持续60s气泡")
+    bubble=popup.MainWindow()
     for i in range(1,21):
-        bubble=popup.MainWindow()
         bubble.startBubble(info.title,info.msg)
 
 def actwp():
@@ -98,22 +98,14 @@ if actstat==1:
     logit("行动开始")
 else:
     logit("日期未到，程序退出")
-    exit()
+    sys.exit()
 
 # 计算剩余秒
 strthe=str(nowye)+"-"+str(nowmon)+"-"+str(nowday)+" "+str(info.ah)+":"+str(info.am)+":"+"0.0"
 thetime=datetime.datetime.strptime(strthe,"%Y-%m-%d %H:%M:%S.%f")
-logit("行动时间"+str(thetime))
+logit("预计行动时间，若已过则推迟至明日"+str(thetime))
 delta=(thetime-nowtime).seconds
 logit("倒计时"+str(delta)+"秒")
-if delta<0:
-        if delta>=-600:
-            delta=10
-            logit("超时小于10min 倒计时10s")
-        else:
-            logit("负秒 重试 推迟24h")
-            delta=delta+86400
-            logit("倒计时"+str(delta)+"秒")
 logit("开始等待"+str(delta)+"秒")
 time.sleep(delta)
 logit("开始行动")
